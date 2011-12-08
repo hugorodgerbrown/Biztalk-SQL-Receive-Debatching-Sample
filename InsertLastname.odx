@@ -1,0 +1,163 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="c8b09b0c-023b-4826-ae71-420ac685e365" LowerBound="1.1" HigherBound="31.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="BizTalk.Samples.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="db94f6eb-b9b4-4757-995a-5eb071892e03" ParentLink="Module_ServiceDeclaration" LowerBound="4.1" HigherBound="30.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="InsertLastname" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="ServiceBody" OID="9790504c-3d47-495d-8322-67c2f742c032" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="281bd557-98b8-4006-80dc-1757f838ee2f" ParentLink="ServiceBody_Statement" LowerBound="16.1" HigherBound="18.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="RcvFullname" />
+                    <om:Property Name="MessageName" Value="Fullname" />
+                    <om:Property Name="OperationName" Value="Name" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="RcvFullname" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="76c8a772-c33d-4d6b-9884-e2e7f49a30c5" ParentLink="ServiceBody_Statement" LowerBound="18.1" HigherBound="24.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructSqlRequest" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="356ba99f-e8fd-4dbd-a000-9a7c32bed92d" ParentLink="ComplexStatement_Statement" LowerBound="21.1" HigherBound="23.1">
+                        <om:Property Name="ClassName" Value="BizTalk.Samples.Maps.MapNameToSqlInsertLastnameRequest" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="MapToSqlRequest" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="df2bb082-c279-4370-bcf7-e748de8abe66" ParentLink="Transform_InputMessagePartRef" LowerBound="22.101" HigherBound="22.109">
+                            <om:Property Name="MessageRef" Value="Fullname" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="920a9b9a-89ff-42cf-948a-0388787e7046" ParentLink="Transform_OutputMessagePartRef" LowerBound="22.28" HigherBound="22.41">
+                            <om:Property Name="MessageRef" Value="InsertRequest" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="5fa4ec65-9ab7-45b2-8408-d3c7e2b464f4" ParentLink="Construct_MessageRef" LowerBound="19.23" HigherBound="19.36">
+                        <om:Property Name="Ref" Value="InsertRequest" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="88a98a58-277a-4aaa-a2e6-d31b9c065579" ParentLink="ServiceBody_Statement" LowerBound="24.1" HigherBound="26.1">
+                    <om:Property Name="PortName" Value="InsertLastnameSql" />
+                    <om:Property Name="MessageName" Value="InsertRequest" />
+                    <om:Property Name="OperationName" Value="SqlInsert" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="SqlInsertRequest" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Receive" OID="5b7a9618-0dfd-4d0a-8570-86c1aa91e53b" ParentLink="ServiceBody_Statement" LowerBound="26.1" HigherBound="28.1">
+                    <om:Property Name="Activate" Value="False" />
+                    <om:Property Name="PortName" Value="InsertLastnameSql" />
+                    <om:Property Name="MessageName" Value="InsertResponse" />
+                    <om:Property Name="OperationName" Value="SqlInsert" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="SqlInsertResponse" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="6325c108-450d-46f7-bc17-3435aab84e27" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="7.1" HigherBound="9.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="BizTalk.Samples.Orchestrations.NamePortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="RcvFullname" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="6b625e7f-c8bc-4a5a-b437-4b04534ed31e" ParentLink="PortDeclaration_CLRAttribute" LowerBound="7.1" HigherBound="8.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="66859b1a-0f14-4a6b-816d-57c5f304a780" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="9.1" HigherBound="11.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="7" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="BizTalk.Samples.Orchestrations.InsertLastnamePortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="InsertLastnameSql" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="7f7e9e38-d8a2-4662-9dce-cd51a25caf46" ParentLink="PortDeclaration_CLRAttribute" LowerBound="9.1" HigherBound="10.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="3988d633-34f4-498b-8256-e98e541dc720" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="11.1" HigherBound="12.1">
+                <om:Property Name="Type" Value="BizTalk.Samples.Schemas.Fullname" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Fullname" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="2cb6b33a-ed91-4cbd-8bd1-a880ffa28771" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="12.1" HigherBound="13.1">
+                <om:Property Name="Type" Value="BizTalk.Samples.Schemas.Sql.InsertLastname.InsertLastnameReq" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="InsertRequest" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="0e6ea6fe-17b0-475b-b34a-1d6fbb0eae7e" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="13.1" HigherBound="14.1">
+                <om:Property Name="Type" Value="BizTalk.Samples.Schemas.Sql.InsertLastname.InsertLastnameResp" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="InsertResponse" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module BizTalk.Samples.Orchestrations
+{
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service InsertLastname
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements NamePortType RcvFullname;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses InsertLastnamePortType InsertLastnameSql;
+        message BizTalk.Samples.Schemas.Fullname Fullname;
+        message BizTalk.Samples.Schemas.Sql.InsertLastname.InsertLastnameReq InsertRequest;
+        message BizTalk.Samples.Schemas.Sql.InsertLastname.InsertLastnameResp InsertResponse;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("281bd557-98b8-4006-80dc-1757f838ee2f")]
+            activate receive (RcvFullname.Name, Fullname);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("76c8a772-c33d-4d6b-9884-e2e7f49a30c5")]
+            construct InsertRequest
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("356ba99f-e8fd-4dbd-a000-9a7c32bed92d")]
+                transform (InsertRequest) = BizTalk.Samples.Maps.MapNameToSqlInsertLastnameRequest (Fullname);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("88a98a58-277a-4aaa-a2e6-d31b9c065579")]
+            send (InsertLastnameSql.SqlInsert, InsertRequest);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("5b7a9618-0dfd-4d0a-8570-86c1aa91e53b")]
+            receive (InsertLastnameSql.SqlInsert, InsertResponse);
+        }
+    }
+}
+

@@ -1,0 +1,146 @@
+<VisualStudioProject>
+    <BIZTALK
+        ProductVersion = "3.0.4902"
+        SchemaVersion = "1.0"
+        ProjectGuid = "{0D13CE23-6DF1-424A-8BE0-64F70B53446C}"
+    >
+        <Build>
+            <Settings>
+                <EditorCommon/>
+                <ProjectCommon
+                    AssemblyKeyName = ""
+                    AssemblyKeyFile = "..\..\Key\Key.snk"
+                    AssemblyDelaySign = "False"
+                    AssemblyTitle = ""
+                    AssemblyDescription = ""
+                    AssemblyDefaultAlias = ""
+                    AssemblyConfiguration = ""
+                    AssemblyTrademark = ""
+                    AssemblyProduct = ""
+                    AssemblyInformationalVersion = "1.0.0.0"
+                    AssemblyFileVersion = "1.0.0.0"
+                    AssemblyCopyright = ""
+                    AssemblyCompany = ""
+                    AssemblyVersion = "1.0.0.0"
+                    DefaultNamespace = "BizTalk.Samples"
+                    AssemblyName = "BizTalk.Samples"
+                />
+                <Config
+                    Name = "Development"
+                    BpelCompliance = "True"
+                    GenerateDebuggingInformation = "True"
+                    EmbedTrackingInformation = "True"
+                    TreatWarningsAsErrors = "False"
+                    WarningLevel = "4"
+                    OutputPath = "bin\Development\"
+                />
+                <Config
+                    Name = "Deployment"
+                    BpelCompliance = "True"
+                    GenerateDebuggingInformation = "False"
+                    EmbedTrackingInformation = "True"
+                    TreatWarningsAsErrors = "False"
+                    WarningLevel = "4"
+                    OutputPath = "bin\Deployment\"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                />
+                <Reference
+                    Name = "Microsoft.BizTalk.DefaultPipelines"
+                    AssemblyName = "Microsoft.BizTalk.DefaultPipelines"
+                />
+                <Reference
+                    Name = "Microsoft.BizTalk.GlobalPropertySchemas"
+                    AssemblyName = "Microsoft.BizTalk.GlobalPropertySchemas"
+                />
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "Fullname.xsd"
+                    BuildAction = "Compile"
+                    Namespace = "BizTalk.Samples.Schemas"
+                    Type = "Fullname"
+                />
+                <File
+                    RelPath = "InsertFirstname.odx"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "InsertFirstname.xsd"
+                    BuildAction = "Compile"
+                    Namespace = "BizTalk.Samples.Schemas.Sql"
+                    Type = "InsertFirstname"
+                />
+                <File
+                    RelPath = "InsertLastname.odx"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "InsertLastname.xsd"
+                    BuildAction = "Compile"
+                    Namespace = "BizTalk.Samples.Schemas.Sql"
+                    Type = "InsertLastname"
+                />
+                <File
+                    RelPath = "MapNameToSqlInsertFirstnameRequest.btm"
+                    BuildAction = "Compile"
+                    Namespace = "BizTalk.Samples.Maps"
+                    Type = "MapNameToSqlInsertFirstnameRequest"
+                />
+                <File
+                    RelPath = "MapNameToSqlInsertLastnameRequest.btm"
+                    BuildAction = "Compile"
+                    Namespace = "BizTalk.Samples.Maps"
+                    Type = "MapNameToSqlInsertLastnameRequest"
+                />
+                <File
+                    RelPath = "MapSqlNameToBizTalkName.btm"
+                    BuildAction = "Compile"
+                    Namespace = "BizTalk.Samples.Maps"
+                    Type = "MapSqlNameToBizTalkName"
+                />
+                <File
+                    RelPath = "PropertySchema.xsd"
+                    BuildAction = "Compile"
+                    Namespace = "BizTalk.Samples.Schemas"
+                    Type = "PropertySchema"
+                />
+                <File
+                    RelPath = "SelectFullname.xsd"
+                    BuildAction = "Compile"
+                    Namespace = "BizTalk.Samples.Schemas.Sql"
+                    Type = "SelectNames"
+                />
+                <File
+                    RelPath = "SqlName.xsd"
+                    BuildAction = "Compile"
+                    Namespace = "BizTalk.Samples.Schemas.Sql"
+                    Type = "Name"
+                />
+                <File
+                    RelPath = "Binding\BizTalk.Samples.Binding.xml"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Key\key.snk"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Sql\database.sql"
+                    BuildAction = "None"
+                />
+            </Include>
+        </Files>
+    </BIZTALK>
+</VisualStudioProject>
+
